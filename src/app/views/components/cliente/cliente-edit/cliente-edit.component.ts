@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Tecnico } from 'src/app/models/tecnico';
-import { TecnicoService } from 'src/app/services/tecnico.service';
+import { Cliente } from 'src/app/models/cliente';
+import { ClienteService } from 'src/app/services/cliente.service';
 
 @Component({
-  selector: 'app-tecnico-edit',
-  templateUrl: './tecnico-edit.component.html',
-  styleUrls: ['./tecnico-edit.component.css']
+  selector: 'app-cliente-edit',
+  templateUrl: './cliente-edit.component.html',
+  styleUrls: ['./cliente-edit.component.css']
 })
-export class TecnicoEditComponent {
-  idTecnico = ''
+export class ClienteEditComponent {
+  idCliente = ''
 
-  tecnico: Tecnico = {
+  cliente: Cliente = {
     id: '',
     nome: '',
     cpf: '',
@@ -25,29 +25,29 @@ export class TecnicoEditComponent {
 
   constructor(
     private router: Router,
-    private service: TecnicoService,
+    private service: ClienteService,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    this.idTecnico = this.route.snapshot.paramMap.get('id')!
+    this.idCliente = this.route.snapshot.paramMap.get('id')!
     this.findById()
   }
 
   findById(): void {
-    this.service.findById(this.idTecnico).subscribe(data => {
-      this.tecnico = data
+    this.service.findById(this.idCliente).subscribe((data) => {
+      this.cliente = data
     })
   }
 
   cancelar(): void {
-    this.router.navigate(['tecnicos'])
+    this.router.navigate(['clientes'])
   }
 
   update(): void {
-    this.service.update(this.tecnico).subscribe(data => {
-      this.tecnico = data
-      this.router.navigate(['tecnicos'])
+    this.service.update(this.cliente).subscribe(data => {
+      this.cliente = data
+      this.router.navigate(['clientes'])
       this.service.message("Técnico atualizado com sucesso")
     }, err => {
       if (err.error.error.match('já cadastrado')) {
@@ -56,10 +56,7 @@ export class TecnicoEditComponent {
         this.service.message("Campo(s) inválido(s)!");
       }
     })
-
-
   }
-
 
   errorValidateNome() {
     if (this.nome.invalid) {

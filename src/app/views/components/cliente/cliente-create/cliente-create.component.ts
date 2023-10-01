@@ -1,18 +1,16 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Tecnico } from 'src/app/models/tecnico';
-import { TecnicoService } from 'src/app/services/tecnico.service';
+import { Router } from '@angular/router';
+import { Cliente } from 'src/app/models/cliente';
+import { ClienteService } from 'src/app/services/cliente.service';
 
 @Component({
-  selector: 'app-tecnico-edit',
-  templateUrl: './tecnico-edit.component.html',
-  styleUrls: ['./tecnico-edit.component.css']
+  selector: 'app-cliente-create',
+  templateUrl: './cliente-create.component.html',
+  styleUrls: ['./cliente-create.component.css']
 })
-export class TecnicoEditComponent {
-  idTecnico = ''
-
-  tecnico: Tecnico = {
+export class ClienteCreateComponent {
+  cliente: Cliente = {
     id: '',
     nome: '',
     cpf: '',
@@ -25,41 +23,26 @@ export class TecnicoEditComponent {
 
   constructor(
     private router: Router,
-    private service: TecnicoService,
-    private route: ActivatedRoute
+    private service: ClienteService
   ) { }
 
-  ngOnInit(): void {
-    this.idTecnico = this.route.snapshot.paramMap.get('id')!
-    this.findById()
-  }
-
-  findById(): void {
-    this.service.findById(this.idTecnico).subscribe(data => {
-      this.tecnico = data
-    })
-  }
-
   cancelar(): void {
-    this.router.navigate(['tecnicos'])
+    this.router.navigate(['clientes'])
   }
 
-  update(): void {
-    this.service.update(this.tecnico).subscribe(data => {
-      this.tecnico = data
-      this.router.navigate(['tecnicos'])
-      this.service.message("Técnico atualizado com sucesso")
+  create(): void {
+    console.log(this.cliente.cpf)
+    this.service.create(this.cliente).subscribe((resposta) => {
+      this.router.navigate(['clientes'])
+      this.service.message("Cliente criado com sucesso!");
     }, err => {
       if (err.error.error.match('já cadastrado')) {
         this.service.message(err.error.error);
       } else {
-        this.service.message("Campo(s) inválido(s)!");
+        this.service.message(err);
       }
     })
-
-
   }
-
 
   errorValidateNome() {
     if (this.nome.invalid) {

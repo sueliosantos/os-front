@@ -4,6 +4,7 @@ import { Tecnico } from '../models/tecnico';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Cliente } from '../models/cliente';
 
 // Now you can use Observable in your code
 
@@ -12,36 +13,36 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 @Injectable({
   providedIn: 'root'
 })
-export class TecnicoService {
+export class ClienteService {
   baseUrl: string = environment.baseURL;
   constructor(
     private http: HttpClient,
     private snack: MatSnackBar
   ) { }
 
-  findAll(): Observable<Tecnico[]> {
-    const url = this.baseUrl + "/tecnicos";
-    return this.http.get<Tecnico[]>(url);
+  findAll(): Observable<Cliente[]> {
+    const url = this.baseUrl + "/clientes";
+    return this.http.get<Cliente[]>(url);
 
   }
 
-  findById(id: any): Observable<Tecnico> {
-    const url = this.baseUrl + "/tecnicos/" + id;
-    return this.http.get<Tecnico>(url);
+  findById(id: any): Observable<Cliente> {
+    const url = this.baseUrl + "/clientes/" + id;
+    return this.http.get<Cliente>(url);
   }
 
-  create(tecnico: Tecnico): Observable<Tecnico> {
-    const url = this.baseUrl + "/tecnicos"
-    return this.http.post<Tecnico>(url, tecnico);
+  create(cliente: Cliente): Observable<Cliente> {
+    const url = this.baseUrl + "/clientes";
+    return this.http.post<Cliente>(url, cliente);
   }
 
-  update(tecnico: Tecnico): Observable<Tecnico> {
-    const url = this.baseUrl + "/tecnicos/" + tecnico.id;
-    return this.http.put<Tecnico>(url, tecnico);
+  update(cliente: Cliente): Observable<Cliente> {
+    const url = this.baseUrl + "/clientes/" + cliente.id;
+    return this.http.put<Cliente>(url, cliente);
   }
 
   delete(id: any): Observable<void> {
-    const url = this.baseUrl + "/tecnicos/" + id;
+    const url = this.baseUrl + "/clientes/" + id;
     return this.http.delete<void>(url);
   }
 
