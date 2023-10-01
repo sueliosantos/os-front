@@ -32,6 +32,8 @@ import { ClienteListComponent } from './views/components/cliente/cliente-list/cl
 import { ClienteCreateComponent } from './views/components/cliente/cliente-create/cliente-create.component';
 import { ClienteEditComponent } from './views/components/cliente/cliente-edit/cliente-edit.component';
 import { ClienteDeleteComponent } from './views/components/cliente/cliente-delete/cliente-delete.component';
+import { OsListComponent } from './views/components/os/os-list/os-list.component';
+import { OsCreateComponent } from './views/components/os/os-create/os-create.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { ClienteDeleteComponent } from './views/components/cliente/cliente-delet
     ClienteCreateComponent,
     ClienteEditComponent,
     ClienteDeleteComponent,
+    OsListComponent,
+    OsCreateComponent,
   ],
   imports: [
     BrowserModule,

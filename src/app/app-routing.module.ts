@@ -9,6 +9,8 @@ import { ClienteListComponent } from './views/components/cliente/cliente-list/cl
 import { ClienteCreateComponent } from './views/components/cliente/cliente-create/cliente-create.component';
 import { ClienteEditComponent } from './views/components/cliente/cliente-edit/cliente-edit.component';
 import { ClienteDeleteComponent } from './views/components/cliente/cliente-delete/cliente-delete.component';
+import { OsListComponent } from './views/components/os/os-list/os-list.component';
+import { OsCreateComponent } from './views/components/os/os-create/os-create.component';
 
 const routes: Routes = [
   {
@@ -47,6 +49,15 @@ const routes: Routes = [
     path: 'clientes/delete/:id',
     component: ClienteDeleteComponent
   }
+  ,
+  {
+    path: 'os',
+    component: OsListComponent
+  },
+  {
+    path: 'os/create',
+    component: OsCreateComponent
+  },
 ];
 
 @NgModule({
