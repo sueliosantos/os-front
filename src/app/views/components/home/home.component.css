@@ -1,0 +1,12 @@
+mat-card {
+    width: 80%;
+    height: 50%;
+    margin: 1rem auto 0 auto;
+}
+
+.imagem-reduzida {
+    width: 150px;
+    /* Defina a largura desejada em pixels */
+    height: auto;
+    /* Mantém a proporção original da imagem */
+}
