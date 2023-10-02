@@ -1,7 +1,7 @@
 <div class="container">
     <div class="campos">
         <mat-form-field>
-            <mat-label>Editar Técnico</mat-label>
+            <mat-label>Técnico</mat-label>
             <mat-select [(value)]="os.tecnico">
                 <mat-option *ngFor="let tec of tecnicos" value="{{ tec.id }}">{{ tec.nome }}</mat-option>
             </mat-select>
