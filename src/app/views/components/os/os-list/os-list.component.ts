@@ -73,4 +73,7 @@ export class OsListComponent {
       return 'alta'
     }
   }
+
+  update(x: any) {
+  }
 }

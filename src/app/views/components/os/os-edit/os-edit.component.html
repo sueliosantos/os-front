@@ -1,7 +1,7 @@
 <div class="container">
     <div class="campos">
         <mat-form-field>
-            <mat-label>Técnico</mat-label>
+            <mat-label>Editar Técnico</mat-label>
             <mat-select [(value)]="os.tecnico">
                 <mat-option *ngFor="let tec of tecnicos" value="{{ tec.id }}">{{ tec.nome }}</mat-option>
             </mat-select>
@@ -40,6 +40,6 @@
         </mat-form-field>
     </form>
 
-    <button (click)="create()" class="mat-elevation-z1" mat-button color="primary">Criar</button>
+    <button (click)="update()" class="mat-elevation-z1" mat-button color="primary">Atualizar</button>
     <button (click)="cancelar()" class="mat-elevation-z1" mat-button color="warn">Cancelar</button>
 </div>
