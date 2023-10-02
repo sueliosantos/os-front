@@ -19,7 +19,6 @@ export class OsCreateComponent {
     observacao: '',
     status: '',
     prioridade: '',
-
   }
 
   tecnicos: Tecnico[] = []

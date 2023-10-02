@@ -36,6 +36,7 @@ import { OsListComponent } from './views/components/os/os-list/os-list.component
 import { OsCreateComponent } from './views/components/os/os-create/os-create.component';
 import { OsEditComponent } from './views/components/os/os-edit/os-edit.component';
 import { OsViewComponent } from './views/components/os/os-view/os-view.component';
+import { OsClosedComponent } from './views/components/os/os-closed/os-closed.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { OsViewComponent } from './views/components/os/os-view/os-view.component
     OsCreateComponent,
     OsEditComponent,
     OsViewComponent,
+    OsClosedComponent,
   ],
   imports: [
     BrowserModule,

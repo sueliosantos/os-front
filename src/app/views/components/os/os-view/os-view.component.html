@@ -1,1 +1,10 @@
-<p>os-view works!</p>
+<div class="container">
+    <h1>Observações da ordem de Serviço</h1>
+    <mat-card class="mat-elevation-z8">
+        <p id="abertura">Data de abertura: {{os.dataAbertura}}</p>
+        <p id="obs">Observações</p>
+        <p>{{os.observacao}}</p>
+    </mat-card>
+
+    <button (click)="cancelar()" class="mat-elevation-z1" mat-button color="warn">Voltar</button>
+</div>

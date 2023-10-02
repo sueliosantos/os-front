@@ -8,11 +8,11 @@ import { OSService } from 'src/app/services/os.service';
 import { TecnicoService } from 'src/app/services/tecnico.service';
 
 @Component({
-  selector: 'app-os-list',
-  templateUrl: './os-list.component.html',
-  styleUrls: ['./os-list.component.css']
+  selector: 'app-os-closed',
+  templateUrl: './os-closed.component.html',
+  styleUrls: ['./os-closed.component.css']
 })
-export class OsListComponent {
+export class OsClosedComponent {
   os: OS[] = [];
 
   displayedColumns: string[] = ['cliente', 'tecnico', 'prioridade', 'status', 'abertura', 'fechamento', 'action'];
@@ -34,7 +34,7 @@ export class OsListComponent {
   findAll(): void {
     this.service.findAll().subscribe((resposta) => {
       resposta.forEach((x) => {
-        if (x.status != "ENCERRADO")
+        if (x.status === "ENCERRADO")
           this.os.push(x);
       })
 
@@ -43,10 +43,6 @@ export class OsListComponent {
       this.dataSource = new MatTableDataSource<OS>(this.os);
       this.dataSource.paginator = this.paginator;
     });
-  }
-
-  navigateToCreate(): void {
-    this.router.navigate(['os/create'])
   }
 
   //Convertendo o id que vem na resposta para um tecnico.nome

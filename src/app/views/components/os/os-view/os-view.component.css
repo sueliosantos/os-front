@@ -1,0 +1,21 @@
+.container {
+    width: 70%;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+#abertura {
+    text-align: end;
+    font-weight: bold;
+}
+
+#obs {
+    font-weight: bold;
+}
+
+button {
+    margin-top: 1rem;
+}
