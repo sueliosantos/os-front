@@ -1,3 +1,4 @@
+import { LoginComponent } from './views/components/login/login.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -38,6 +39,8 @@ import { OsEditComponent } from './views/components/os/os-edit/os-edit.component
 import { OsViewComponent } from './views/components/os/os-view/os-view.component';
 import { OsClosedComponent } from './views/components/os/os-closed/os-closed.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +62,7 @@ import { OsClosedComponent } from './views/components/os/os-closed/os-closed.com
     OsEditComponent,
     OsViewComponent,
     OsClosedComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

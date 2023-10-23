@@ -14,8 +14,14 @@ import { OsCreateComponent } from './views/components/os/os-create/os-create.com
 import { OsEditComponent } from './views/components/os/os-edit/os-edit.component';
 import { OsViewComponent } from './views/components/os/os-view/os-view.component';
 import { OsClosedComponent } from './views/components/os/os-closed/os-closed.component';
+import { LoginComponent } from './views/components/login/login.component';
 
 const routes: Routes = [
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+
   {
     path: '',
     component: HomeComponent,
