@@ -15,6 +15,7 @@ import { OsEditComponent } from './views/components/os/os-edit/os-edit.component
 import { OsViewComponent } from './views/components/os/os-view/os-view.component';
 import { OsClosedComponent } from './views/components/os/os-closed/os-closed.component';
 import { LoginComponent } from './views/components/login/login.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -24,60 +25,62 @@ const routes: Routes = [
 
   {
     path: '',
-    component: HomeComponent,
-  },
-  {
-    path: 'tecnicos',
-    component: TecnicoListComponent
-  },
-  {
-    path: 'tecnicos/create',
-    component: TecnicoCreateComponent
-  },
-  {
-    path: 'tecnicos/edit/:id',
-    component: TecnicoEditComponent
-  },
-  {
-    path: 'tecnicos/delete/:id',
-    component: TecnicoDeleteComponent
-  },
-  {
-    path: 'clientes',
-    component: ClienteListComponent
-  },
-  {
-    path: 'clientes/create',
-    component: ClienteCreateComponent
-  },
-  {
-    path: 'clientes/edit/:id',
-    component: ClienteEditComponent
-  },
-  {
-    path: 'clientes/delete/:id',
-    component: ClienteDeleteComponent
-  }
-  ,
-  {
-    path: 'os',
-    component: OsListComponent
-  },
-  {
-    path: 'os/create',
-    component: OsCreateComponent
-  },
-  {
-    path: 'os/edit/:id',
-    component: OsEditComponent
-  },
-  {
-    path: 'os/view/:id',
-    component: OsViewComponent
-  },
-  {
-    path: 'os/closed',
-    component: OsClosedComponent
+    component: HomeComponent, canActivate: [AuthGuard], children: [
+
+      {
+        path: 'tecnicos',
+        component: TecnicoListComponent
+      },
+      {
+        path: 'tecnicos/create',
+        component: TecnicoCreateComponent
+      },
+      {
+        path: 'tecnicos/edit/:id',
+        component: TecnicoEditComponent
+      },
+      {
+        path: 'tecnicos/delete/:id',
+        component: TecnicoDeleteComponent
+      },
+      {
+        path: 'clientes',
+        component: ClienteListComponent
+      },
+      {
+        path: 'clientes/create',
+        component: ClienteCreateComponent
+      },
+      {
+        path: 'clientes/edit/:id',
+        component: ClienteEditComponent
+      },
+      {
+        path: 'clientes/delete/:id',
+        component: ClienteDeleteComponent
+      }
+      ,
+      {
+        path: 'os',
+        component: OsListComponent
+      },
+      {
+        path: 'os/create',
+        component: OsCreateComponent
+      },
+      {
+        path: 'os/edit/:id',
+        component: OsEditComponent
+      },
+      {
+        path: 'os/view/:id',
+        component: OsViewComponent
+      },
+      {
+        path: 'os/closed',
+        component: OsClosedComponent
+      },
+    ]
   },
 
 ];
