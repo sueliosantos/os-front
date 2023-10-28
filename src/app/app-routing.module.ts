@@ -1,3 +1,4 @@
+import { NavComponent } from './views/components/template/nav/nav.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './views/components/home/home.component';
@@ -25,8 +26,11 @@ const routes: Routes = [
 
   {
     path: '',
-    component: HomeComponent, canActivate: [AuthGuard], children: [
-
+    component: NavComponent, canActivate: [AuthGuard], children: [
+      {
+        path: 'home',
+        component: HomeComponent
+      },
       {
         path: 'tecnicos',
         component: TecnicoListComponent

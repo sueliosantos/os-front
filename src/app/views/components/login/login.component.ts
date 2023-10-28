@@ -38,7 +38,7 @@ export class LoginComponent {
       this.service.sucessfulllogin(resposta.headers.get('Authorization').substring(7));
       this.router.navigate(['']);
     }, () => {
-      this.toast.error('Usário e/ou senha invalidos')
+      this.toast.error('Usuário e/ou senha invalidos')
     })
   }
 

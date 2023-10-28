@@ -1,7 +1,7 @@
 <mat-drawer-container class="container" autosize>
     <mat-drawer #drawer class="sidenav" mode="side">
         <mat-nav-list class="nav-list">
-            <a mat-list-item routerLink="/">
+            <a mat-list-item routerLink="home">
                 <i class="material-icons">home</i> Home
             </a>
             <a mat-list-item routerLink="tecnicos">
@@ -25,6 +25,8 @@
         </mat-nav-list>
     </mat-drawer>
     <div class="sidenav-content">
+        <app-header></app-header>
+        <app-footer></app-footer>
         <button type="mat-icon-button" mat-button (click)="drawer.toggle()">
       <mat-icon class="mat-18">more_vert</mat-icon>
     </button>
