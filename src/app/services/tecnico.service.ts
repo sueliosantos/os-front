@@ -13,6 +13,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   providedIn: 'root'
 })
 export class TecnicoService {
+
   baseUrl: string = environment.baseURL;
   constructor(
     private http: HttpClient,
