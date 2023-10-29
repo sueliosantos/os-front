@@ -39,6 +39,7 @@ import { OsEditComponent } from './views/components/os/os-edit/os-edit.component
 import { OsViewComponent } from './views/components/os/os-view/os-view.component';
 import { OsClosedComponent } from './views/components/os/os-closed/os-closed.component';
 import { ToastrModule } from 'ngx-toastr';
+import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 
 
 
@@ -96,7 +97,7 @@ import { ToastrModule } from 'ngx-toastr';
       progressBar: true,
     })
   ],
-  providers: [],
+  providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
